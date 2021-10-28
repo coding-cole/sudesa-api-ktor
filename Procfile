@@ -1,1 +1,1 @@
-web: ./build/install/studesa-api/bin/studesa-api
+web: ./build/install/com.codingCole.studesa-api/bin/com.codingCole.studesa-api
