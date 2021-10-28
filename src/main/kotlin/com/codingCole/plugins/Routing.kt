@@ -1,22 +1,18 @@
 package com.codingCole.plugins
 
+import com.codingCole.routes.home
+import com.codingCole.routes.randomStudent
 import io.ktor.routing.*
-import io.ktor.http.*
-import io.ktor.content.*
 import io.ktor.http.content.*
 import io.ktor.application.*
-import io.ktor.response.*
-import io.ktor.request.*
 
 fun Application.configureRouting() {
-    
-
     routing {
-        get("/") {
-                call.respondText("And, trust me...it works perfectly!")
-            }
+        randomStudent()
+        home()
+
         // Static plugin. Try to access `/static/index.html`
-        static("/static") {
+        static {
             resources("static")
         }
     }
