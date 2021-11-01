@@ -27,6 +27,14 @@ dependencies {
     implementation("io.ktor:ktor-server-host-common:$ktor_version")
     implementation("io.ktor:ktor-server-netty:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
+
+    //KTORM
+    implementation("org.ktorm:ktorm-core:3.4.1")
+
+    //MySQL Connector
+    implementation("mysql:mysql-connector-java:8.0.27")
+
+    //tests
     testImplementation("io.ktor:ktor-server-tests:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
 }

@@ -1,7 +1,9 @@
 package com.codingCole
 
+import com.codingCole.plugins.configureMonitoring
+import com.codingCole.plugins.configureRouting
+import com.codingCole.plugins.configureSerialization
 import io.ktor.application.*
-import com.codingCole.plugins.*
 
 fun main(args: Array<String>): Unit =
     io.ktor.server.netty.EngineMain.main(args)
