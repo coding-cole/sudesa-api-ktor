@@ -3,7 +3,8 @@ package com.codingCole.data.models.dataClass
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Note(
+data class User(
     val id: Int,
-    val note: String
+    val username: String,
+    val password: String
 )

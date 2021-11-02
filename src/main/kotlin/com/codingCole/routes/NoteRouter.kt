@@ -1,9 +1,9 @@
 package com.codingCole.routes
 
 import com.codingCole.data.entities.NoteEntity
-import com.codingCole.data.models.Note
-import com.codingCole.data.models.NoteRequest
-import com.codingCole.data.models.responses.NoteResponse
+import com.codingCole.data.models.dataClass.Note
+import com.codingCole.data.models.dataClass.NoteRequest
+import com.codingCole.data.models.responses.StatusResponse
 import com.codingCole.db.DataBaseConnection
 import io.ktor.application.*
 import io.ktor.http.*
@@ -12,7 +12,7 @@ import io.ktor.response.*
 import io.ktor.routing.*
 import org.ktorm.dsl.*
 
-val db = DataBaseConnection.database
+private val db = DataBaseConnection.database
 
 fun Route.noteRouter() {
     getNote()
@@ -45,7 +45,7 @@ private fun Route.insertNote() {
         if (result == 1) {
             // Send successful response to the client
             call.respond(
-                HttpStatusCode.OK, NoteResponse(
+                HttpStatusCode.OK, StatusResponse(
                     success = true,
                     data = "Values has been successfully inserted"
                 )
@@ -53,7 +53,7 @@ private fun Route.insertNote() {
         } else {
             // Send failure response to the client
             call.respond(
-                HttpStatusCode.BadRequest, NoteResponse(
+                HttpStatusCode.BadRequest, StatusResponse(
                     success = false,
                     data = "Sorry, Something went wrong"
                 )
@@ -77,7 +77,7 @@ private fun Route.getNote() {
         if (note == null) {
             call.respond(
                 HttpStatusCode.NotFound,
-                NoteResponse(
+                StatusResponse(
                     success = false,
                     data = "Could not find note with id = $id"
                 )
@@ -85,7 +85,7 @@ private fun Route.getNote() {
         } else {
             call.respond(
                 HttpStatusCode.OK,
-                NoteResponse(
+                StatusResponse(
                     success = true,
                     data = note
                 )
@@ -108,7 +108,7 @@ private fun Route.updateNote() {
         if (returned == 1) {
             call.respond(
                 HttpStatusCode.OK,
-                NoteResponse(
+                StatusResponse(
                     success = true,
                     data = "Note has been updated successfully"
                 )
@@ -116,7 +116,7 @@ private fun Route.updateNote() {
         } else {
             call.respond(
                 HttpStatusCode.BadRequest,
-                NoteResponse(
+                StatusResponse(
                     success = false,
                     data = "Note failed to update"
                 )
@@ -134,7 +134,7 @@ private fun Route.deleteNote() {
         if (returned == 1) {
             call.respond(
                 HttpStatusCode.OK,
-                NoteResponse(
+                StatusResponse(
                     success = true,
                     data = "Note has been deleted successfully"
                 )
@@ -142,7 +142,7 @@ private fun Route.deleteNote() {
         } else {
             call.respond(
                 HttpStatusCode.BadRequest,
-                NoteResponse(
+                StatusResponse(
                     success = false,
                     data = "Note failed to delete"
                 )

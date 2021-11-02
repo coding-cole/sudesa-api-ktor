@@ -1,4 +1,4 @@
-package com.codingCole.data.models
+package com.codingCole.data.models.dataClass
 
 import kotlinx.serialization.Serializable
 

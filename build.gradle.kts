@@ -34,6 +34,13 @@ dependencies {
     //MySQL Connector
     implementation("mysql:mysql-connector-java:8.0.27")
 
+    // For encrypting password
+    implementation("org.mindrot:jbcrypt:0.4")
+
+    //Authentication
+    implementation("io.ktor:ktor-auth:$ktor_version")
+    implementation("io.ktor:ktor-auth-jwt:$ktor_version")
+
     //tests
     testImplementation("io.ktor:ktor-server-tests:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")

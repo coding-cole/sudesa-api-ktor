@@ -1,5 +1,6 @@
 package com.codingCole
 
+import com.codingCole.plugins.configureAuthentication
 import com.codingCole.plugins.configureMonitoring
 import com.codingCole.plugins.configureRouting
 import com.codingCole.plugins.configureSerialization
@@ -10,7 +11,8 @@ fun main(args: Array<String>): Unit =
 
 @Suppress("unused") // application.conf references the main function. This annotation prevents the IDE from marking it as unused.
 fun Application.module() {
-    configureRouting()
+    configureAuthentication()
     configureSerialization()
     configureMonitoring()
+    configureRouting()
 }
