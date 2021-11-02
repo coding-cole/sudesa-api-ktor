@@ -1,4 +1,4 @@
-package com.codingCole.data.models.responses
+package com.codingCole.data.models
 
 import kotlinx.serialization.Serializable
 
@@ -10,6 +10,7 @@ data class Student(
     val cohort: String,
     val department: String,
     val email: String,
-    val dateOfBirth: String,
+    val dob: String,
+    val modeOfEntry: String,
     val imageProfile: String,
 )

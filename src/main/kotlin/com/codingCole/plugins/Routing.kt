@@ -7,7 +7,8 @@ import io.ktor.application.*
 
 fun Application.configureRouting() {
     routing {
-        notes()
+        noteRouter()
+        authRouter()
 
         // Static plugin. Try to access `/static/index.html`
         static {

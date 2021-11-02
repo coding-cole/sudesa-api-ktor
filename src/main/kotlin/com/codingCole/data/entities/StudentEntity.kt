@@ -1,6 +1,7 @@
 package com.codingCole.data.entities
 
 import org.ktorm.schema.Table
+import org.ktorm.schema.enum
 import org.ktorm.schema.int
 import org.ktorm.schema.varchar
 
@@ -12,7 +13,8 @@ object StudentEntity: Table<Nothing>("student") {
     val cohort = varchar("cohort")
     val department = varchar("department")
     val email = varchar("email")
-    val dateOfBirth = DOBEntity
+    val dob = varchar("dob")
+    val modeOfEntry = varchar("modeOfEntry")
     val imageProfile = varchar("imageProfile")
 }
 
