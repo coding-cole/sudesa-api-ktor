@@ -20,7 +20,15 @@ fun Route.noteRouter() {
     insertNote()
     updateNote()
     deleteNote()
+    home()
 }
+
+private fun Route.home() {
+    get("/") {
+        call.respondText("Well, Welcome", status = HttpStatusCode.NotFound)
+    }
+}
+
 
 private fun Route.getNotes() {
     get("/notes") {
