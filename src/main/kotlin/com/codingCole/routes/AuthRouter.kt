@@ -35,7 +35,7 @@ private fun Route.register() {
         if (!userCredentials.isValidCredentials()) {
             call.respond(HttpStatusCode.BadRequest,
             StatusResponse(success = false,
-            data = "Username and password dhould be greater than 6 "))
+            data = "Username and password should be greater than 6 "))
             return@post
         }
 
